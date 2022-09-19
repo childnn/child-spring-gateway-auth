@@ -1,0 +1,37 @@
+server:
+  port: 9999
+spring:
+  application:
+    name: child-gateway
+  cloud:
+    #    nacos:
+    #      discovery:
+    #        namespace: public
+    #        server-addr: localhost:8848
+    gateway:
+      discovery:
+        locator:
+          # 实际上可以不用配置 routes 属性
+          # 直接按服务名路由
+          enabled: true  # 开启从注册中心动态创建路由的功能, 利用微服务名进行路由
+      #          lower-case-service-id: true
+
+      # 在gateway中配置uri配置有三种方式，包括
+      # 第一种：ws(websocket)方式: uri: ws://localhost:9000
+      # 第二种：http方式: uri: http://localhost:8130/
+      # 第三种：lb(注册中心中服务名字)方式: uri: lb://brilliance-consumer
+      # 能被gateway的lb方式识别到的命名规则为：
+      # org.springframework.cloud.gateway.filter.RouteToRequestUrlFilter.SCHEME_REGEX
+      # 路由 predicates 类型
+      # org.springframework.cloud.gateway.handler.predicate.RoutePredicateFactory
+#      routes:
+#        - id: p1   # 路由的ID, 没有固定规则但需要唯一
+#          uri: lb://p1   # 服务地址
+##          # 断言, 匹配路径
+#          predicates:
+#            - Path=/p1/**
+#          filters:
+#            -
+
+
+# nacos

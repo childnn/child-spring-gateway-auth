@@ -1,0 +1,5 @@
+server:
+  port: 54322
+spring:
+  application:
+    name: c1

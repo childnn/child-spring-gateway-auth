@@ -1,0 +1,31 @@
+spring:
+  application:
+    name: child-auth
+server:
+  port: 5333
+
+
+# org.springframework.boot.autoconfigure.security.oauth2.OAuth2ClientProperties
+security:
+  oauth2:
+    client:
+      client-id: ZC5NqjnXlXEW7VHt
+      client-secret: 8e35c327f110c1ca86f1cc2c58dae0796fda1b1e
+      access-token-uri: ${auth-server-url}/oauth/token
+      user-authorization-uri: ${auth-server-url}/oauth/authorize
+      grant-type: password
+    resource:
+      token-info-uri: ${auth-server-url}/oauth/check_token
+
+auth-server-url: http://localhost:${server.port}
+
+#management:
+#  endpoints:
+#    web:
+#      exposure:
+#        include: "*"
+#  endpoint:
+#    health:
+#      show-details: ALWAYS  #显示详细信息
+
+jwtTokenPassword: HC7+wTzL5pTGnIakps5uHwRmBTpZ6LxzdvG6oa0wEyM=

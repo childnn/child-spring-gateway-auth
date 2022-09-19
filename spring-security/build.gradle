@@ -1,0 +1,47 @@
+plugins {
+    id 'java'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+
+    // lombok
+    implementation 'org.projectlombok:lombok:1.18.4'
+    // implementation 'org.projectlombok:lombok:1.18.24'
+
+    // nacos
+    // 注册中心
+    // nacos-1.0.0
+    // implementation 'org.springframework.cloud:spring-cloud-starter-alibaba-nacos-discovery:0.9.0.RELEASE'
+    // nacos-1.4.1
+    // implementation 'com.alibaba.cloud:spring-cloud-starter-alibaba-nacos-discovery:2.2.5.RELEASE'
+    // 高版本 使用 nacos-2.0+, 使用 grpc, 无法正常启动, 需要特殊配置
+    // 'com.alibaba.cloud:spring-cloud-starter-alibaba-nacos-discovery:2.2.8.RELEASE'
+
+    // web
+    implementation 'org.springframework.boot:spring-boot-starter-web:2.2.8.RELEASE'
+
+    // security
+    implementation 'org.springframework.boot:spring-boot-starter-security:2.3.10.RELEASE'
+
+    // jwt
+    implementation 'com.auth0:java-jwt:4.0.0'
+    // implementation 'io.jsonwebtoken:jjwt:0.9.1'
+    // implementation 'io.jsonwebtoken:jjwt-api:0.11.5'
+    // // io.jsonwebtoken.impl.DefaultJwtParserBuilder
+    // implementation 'io.jsonwebtoken:jjwt-impl:0.11.5'
+    // // io.jsonwebtoken.jackson.io.JacksonDeserializer
+    // implementation 'io.jsonwebtoken:jjwt-jackson:0.11.5'
+}
+
+test {
+    useJUnitPlatform()
+}

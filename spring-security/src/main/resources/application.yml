@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: child-security
+
+  security:
+    user:
+      password: 12345
+
+logging:
+  level:
+    org.springframework: trace
